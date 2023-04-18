@@ -11,7 +11,7 @@ body {
 }
 
 .container {
-  max-width: 1800px;
+  max-width: 1860px;
   display: flex;
   justify-content: center; /* add this line */
   align-items: center; /* add this line */
@@ -106,7 +106,7 @@ body {
 
 #chart-container {
   width: 50%;
-  height: 400px;
+  height: 600px;
   margin-left:120px;
   margin-top:40px;
 }
@@ -114,7 +114,7 @@ body {
 .chart-buttons {
   display: flex;
   justify-content: center;
-  margin-top: 10px;
+  margin-top: 30px;
 }
 
 .chart-buttons button {
@@ -134,6 +134,27 @@ body {
 .chart-buttons button:hover {
 
   background-color: #f45452; /* darker red hover background */
+}
+
+.icon-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  z-index: 9999; /* ensure the icon is on top of other elements */
+}
+
+.icon {
+  width: 120px;
+  height: 120px;
+  margin-right: 10px;
+}
+
+.icon-text {
+  font-size: 32px;
+  color: #ffffff; /* adjust the text color to fit your design */
 }
 
 
