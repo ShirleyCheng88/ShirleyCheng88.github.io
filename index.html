@@ -1,15 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My Website</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shirley's Temperature Chamber</title>
+    <link rel="stylesheet" href="./static/css/styles.css">
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.esm.js"
+    ></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
-    <main>
-        <h1>Welcome to My Website</h1>  
-        <p>This is my new website which is hosted on GitHub Pages!</p>
-    </main>
+    <div class="container">
+      <div class="card">
+        <div class="top">
+          <div class="nav">
+            <p class="date"></p>
+            <ion-icon name="thermometer-outline" class="user"></ion-icon>
+          </div>
+
+          <p style="font-size: 32px"> Shirley's Temperature Chamber </p>
+          <p style="font-size: 26px"> Set Temperature: </p>
+          <span class="card-title d-block"></span>
+
+
+          <div class="primary">
+            <input type="number" id="main-unit" />
+            <select class="main-unit-options reset">
+              <option>Celsius</option>
+              <option>Kelvin</option>
+              <option>Fahrenheit</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="bottom">
+          <p style="font-size: 26px; color:#f54c4a"> Current Temperature: </p>
+          <div class="secondary">
+            <input type="number" id="second-unit" />
+            <select class="second-unit-options reset">
+              <option>Celsius</option>
+              <option>Kelvin</option>
+              <option>Fahrenheit</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+
+ <div id="chart-container">
+    <canvas id="temperature-chart" ></canvas>
+     <div class="chart-buttons">
+     
+     <button id="start-chart-button">Start Recodring</button>
+     <button id="stop-chart-button">Stop Recording</button>
+  </div>
+  </div>
+ 
+
+
+
+
+    </div>
+    
+     <!-- Add this at the bottom of your HTML page, just before the closing </body> tag -->
+<div class="icon-container">
+  <img src="icon_web.png" alt="icon_web.png" class="icon">
+ 
+</div>
+     
+    <script src="./static/index.js"></script>
+   
+
+
   </body>
 </html>
