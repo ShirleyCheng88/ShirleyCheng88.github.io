@@ -21,8 +21,8 @@
             <ion-icon name="thermometer-outline" class="user"></ion-icon>
           </div>
 
-          <p style="font-size: 32px"> Shirley's Temperature Chamber </p>
-          <p style="font-size: 26px"> Set Temperature: </p>
+          <p style="font-size: 1.7vw"> Shirley's Temperature Chamber </p>
+          <p style="font-size: 1.5vw"> Set Temperature: </p>
           <span class="card-title d-block"></span>
 
 
@@ -37,7 +37,7 @@
         </div>
 
         <div class="bottom">
-          <p style="font-size: 26px; color:#f54c4a"> Current Temperature: </p>
+          <p style="font-size: 1.5vw; color:#f54c4a"> Current Temperature: </p>
           <div class="secondary">
             <input type="number" id="second-unit" />
             <select class="second-unit-options reset">
@@ -50,26 +50,25 @@
       </div>
 
 
- <div id="chart-container">
-    <canvas id="temperature-chart" ></canvas>
-     <div class="chart-buttons">
-     
-     <button id="start-chart-button">Start Recording</button>
-     <button id="stop-chart-button">Stop Recording</button>
-  </div>
-  </div>
+    <div id="chart-container">
+        <canvas id="temperature-chart" ></canvas>
+        <div class="chart-buttons">
+        <button id="start-chart-button">Start Recording</button>
+        <button id="stop-chart-button">Stop Recording</button>
+      </div>
+    </div>
  
 
-
+     <!-- Add this at the bottom of your HTML page, just before the closing </body> tag -->
+     <div class="icon-container">
+      <img src="icon_web.png" alt="icon_web.png" class="icon">
+     
+    </div>
 
 
     </div>
     
-     <!-- Add this at the bottom of your HTML page, just before the closing </body> tag -->
-<div class="icon-container">
-  <img src="icon_web.png" alt="icon_web.png" class="icon">
- 
-</div>
+
      
     <script src="./static/index.js"></script>
    

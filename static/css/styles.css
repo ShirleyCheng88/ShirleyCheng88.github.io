@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
 body {
-  padding-top: 100px;
+  padding-top: 10vh;
+  padding-bottom: 6vh;
   background: linear-gradient(131deg, #f6b8b8, #1a8ff5);
   height: 100%;
   margin: 0;
@@ -12,53 +13,51 @@ body {
 
 .container {
   max-width: 1860px;
+  
   display: flex;
+  flex-wrap: wrap; /* Add this line to wrap items */
   justify-content: center; /* add this line */
   align-items: center; /* add this line */
-  margin: 0 auto;
-  height: 100%; /* add this line */
+  margin: 0 auto; 
+  height: 90%; /* add this line */
 }
 
 
 .card {
-  width: 350px;
+  width: 19.5vw;
+  height:70vh;
+ 
   color: #fff;
   text-align: center;
-  border-radius: 5px;
+  border-radius: 10px;
   -webkit-box-shadow: 2px 3px 9px 4px rgba(176, 100, 255, 0.48);
   box-shadow: 2px 3px 9px 4px rgba(176, 100, 255, 0.48);
   
 
 }
 
-@media only screen and (max-width: 768px) {
-  .container {
-    width: 100%;
-    padding: 0 10px;
-  }
-}
 
 
 .top {
   background-image: linear-gradient(45deg, #f1a49b, #f54c4a);
-  padding-bottom: 80px;
+  padding-bottom: 8vh;
 }
 
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 1vh 1vw;
 }
 
 .user {
-  font-size: 20px;
+  font-size: 1.5vw;
 }
 
 #unit-converter {
   border: none;
   background: none;
-  font-size: 24px;
+  font-size: 1.5vw;
   color: #fff;
   margin-bottom: 30px;
 }
@@ -66,7 +65,7 @@ body {
 #unit-converter option {
   margin: 40px;
   background: rgba(0, 0, 0, 0.3);
-  color: #fff;
+  color: #ffffff;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
 }
 
@@ -74,9 +73,9 @@ body {
   border: none;
   background: none;
   border-bottom: 1px solid #fff;
-  color: #fff;
-  font-size: 40px;
-  width: 160px;
+  color: #ffffff;
+  font-size: 2vw;
+  width: 8vw;
 }
 
 #second-unit {
@@ -84,39 +83,40 @@ body {
   background: none;
   border-bottom: 1px solid #f54c4a;
   color: #f54c4a;
-  font-size: 40px;
-  width: 160px;
+  font-size:2vw;
+  width: 8vw;
 }
 
 .main-unit-options {
   border: none;
   background: none;
-  color: #fff;
-  font-size: 20px;
+  color: #ffffff;
+  font-size: 1.2vw;
 }
 
 .main-unit-option {
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(95, 156, 89, 0.849);
 }
 
 .second-unit-options {
   border: none;
   background: none;
   color: #f54c4a;
-  font-size: 20px;
+  font-size: 1.2vw;
 }
 
 .bottom {
   background-color: #fff;
-  padding: 80px 15px;
+  padding: 12vh 1vw;
   
 }
 
 #chart-container {
-  width: 50%;
-  height: 600px;
-  margin-left:120px;
-  margin-top:40px;
+  width: 55%;
+  height: 70%;
+  margin-left:3vw;
+  margin-top:9vh;
+  margin-right:0.5vw;
 }
 
 .chart-buttons {
@@ -128,12 +128,12 @@ body {
 .chart-buttons button {
   background-color: #F37D77;
   color: white;
-  padding: 15px 30px;
+  padding: 1vw 1.5vw;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   margin: 0px 10px;
-  font-size: 25px;
+  font-size: 1.5vw;
   font-weight: bold;
   text-transform: uppercase;
   /*letter-spacing: 1px;*/
@@ -146,8 +146,8 @@ body {
 
 .icon-container {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 10px;
+  right: 10px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -155,9 +155,9 @@ body {
 }
 
 .icon {
-  width: 120px;
-  height: 120px;
-  margin-right: 10px;
+  width: 10vw;
+  height: 8vw;
+  margin-right: 0.2vw;
 }
 
 .icon-text {
@@ -165,6 +165,13 @@ body {
   color: #ffffff; /* adjust the text color to fit your design */
 }
 
+
+ @media (max-width: 1200px) {
+  .body {
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+  }
+} 
 
 
 
