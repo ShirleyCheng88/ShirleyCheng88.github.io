@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
 body {
-  padding-top: 10vh;
+  padding-top: 6vh;
   padding-bottom: 6vh;
   background: linear-gradient(131deg, #f6b8b8, #1a8ff5);
   height: 100%;
@@ -16,6 +16,7 @@ body {
   
   display: flex;
   flex-wrap: wrap; /* Add this line to wrap items */
+  flex-direction: row; /* Add this line to set the initial flex direction */
   justify-content: center; /* add this line */
   align-items: center; /* add this line */
   margin: 0 auto; 
@@ -173,5 +174,9 @@ body {
   }
 } 
 
-
+@media (orientation: portrait) {
+  .container {
+    flex-direction: column; /* Change flex direction to column when in portrait mode */
+  }
+}
 
