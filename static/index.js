@@ -1,6 +1,6 @@
 // Define variables to store the temperature values
-let setTemp = 0.00;
-let currentTemp = 0.00;
+let setTemp = 20.00;
+let currentTemp = 20.00;
 //Define for chart start time
 let startTime = 0;
 
@@ -22,6 +22,21 @@ function changeTemperature() {
     secondaryOptions.selectedIndex
   ].textContent.toLowerCase();
   
+  // Define a function to format the input value with two decimal places
+function formatInputValue(inputElement) {
+  let value = parseFloat(inputElement.value);
+  if (!isNaN(value)) {
+    inputElement.value = value.toFixed(2);
+  }
+}
+  // Add event listeners for the 'blur' event on the input fields
+  document.getElementById('main-unit').addEventListener('blur', (event) => {
+    formatInputValue(event.target);
+  });
+
+  document.getElementById('second-unit').addEventListener('blur', (event) => {
+    formatInputValue(event.target);
+  });
   // Get the input value and convert to a number
   let numberTyped = parseFloat(document.getElementById('main-unit').value);
 
