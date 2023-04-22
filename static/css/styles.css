@@ -26,14 +26,14 @@ body {
 
 .card {
   width: 19.5vw;
-  height:70vh;
+  /* height:70vh; */
  
   color: #fff;
   text-align: center;
   border-radius: 10px;
-  -webkit-box-shadow: 2px 3px 9px 4px rgba(176, 100, 255, 0.48);
-  box-shadow: 2px 3px 9px 4px rgba(176, 100, 255, 0.48);
+  -webkit-box-shadow: 2px 3px 9px 4px rgba(176, 100, 255, 0.48); 
   
+  box-shadow: 2px 3px 9px 4px rgba(176, 100, 255, 0.48)
 
 }
 
@@ -108,7 +108,7 @@ body {
 
 .bottom {
   background-color: #fff;
-  padding: 12vh 1vw;
+  padding: 10vh 0 14vh 0;
   
 }
 
@@ -156,8 +156,8 @@ body {
 }
 
 .icon {
-  width: 10vw;
-  height: 8vw;
+  width: 8vw;
+  height: 6vw;
   margin-right: 0.2vw;
 }
 
@@ -167,12 +167,12 @@ body {
 }
 
 
- @media (max-width: 1200px) {
+ /* @media (max-width: 1200px) {
   .body {
     padding-top: 1vw;
     padding-bottom: 1vw;
   }
-} 
+}  */
 
 @media (orientation: portrait) {
   .container {
