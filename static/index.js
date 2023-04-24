@@ -214,8 +214,9 @@ let temperatureChart = new Chart('temperature-chart', {
         title: {
             display: true,
             text: 'Time',
-           
-           
+            font: {
+              weight: 'bold'
+            },
         },
         time: {
             unit: 'second',
@@ -274,3 +275,17 @@ let temperatureChart = new Chart('temperature-chart', {
 // Add event listeners for the start and stop buttons
 document.getElementById('start-chart-button').addEventListener('click', startChart);
 document.getElementById('stop-chart-button').addEventListener('click', stopChart);
+
+const icon = document.querySelector('.icon-left-container i');
+const panel = document.querySelector('.popup-panel');
+
+icon.addEventListener('click', (event) => {
+  event.stopPropagation();
+  panel.classList.toggle('show');
+});
+
+document.addEventListener('click', (event) => {
+  if (!panel.contains(event.target)) {
+    panel.classList.remove('show');
+  }
+});
