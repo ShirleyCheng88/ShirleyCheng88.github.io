@@ -168,6 +168,23 @@ function stopChart() {
   clearInterval(chartIntervalId);
 }
 
+document.querySelector('.second-unit-options').addEventListener('change', function() {
+  // Get the selected unit from the dropdown
+  let unit = this.options[this.selectedIndex].textContent;
+  // Update the y-axis title to include the appropriate symbol for the selected unit
+  if (unit === 'Celsius') {
+    temperatureChart.options.scales.y.title.text = 'Current Temperature (℃)';
+  } else if (unit === 'Kelvin') {
+    temperatureChart.options.scales.y.title.text = 'Current Temperature (K)';
+  } else if (unit === 'Fahrenheit') {
+    temperatureChart.options.scales.y.title.text = 'Current Temperature (℉)';
+  }
+  // Update the chart
+  temperatureChart.update();
+});
+
+
+
 // Add event listeners for temperature input changes
 document.getElementById('main-unit').addEventListener('input', changeTemperature);
 document.getElementById('second-unit').addEventListener('input', changeTemperature);
@@ -219,7 +236,23 @@ let temperatureChart = new Chart('temperature-chart', {
         {
           title:{
           display:true,
-          text:'Current Temperature(℃)'
+          text:'Current Temperature(℃)',
+          // Use a callback function to dynamically generate the title
+        // based on the selected temperature unit
+        font: {
+          weight: 'bold'
+        },
+        callback: function (value, index, values) {
+          let unit = document.querySelector('.second-unit-options option:checked').textContent;
+          if (unit === 'Celsius') {
+            return 'Current Temperature (℃)';
+          } else if (unit === 'Kelvin') {
+            return 'Current Temperature (K)';
+          } else if (unit === 'Fahrenheit') {
+            return 'Current Temperature (℉)';
+          }
+        }
+        
         },
         ticks: {
           beginAtZero: true
