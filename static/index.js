@@ -136,7 +136,7 @@ function formatInputValue(inputElement) {
       // Start the loop to change the temperature
       setTimeout(updateTemperature, delay);
     }
-  }, 2200); // Wait 2.2 seconds before checking for changes
+  }, 3200); // Wait 2.2 seconds before checking for changes
 }
 
 
@@ -148,9 +148,12 @@ function startChart() {
     let currentTemp = parseFloat(document.getElementById('second-unit').value);
     let currentTime = new Date();
     temperatureData.push(currentTemp);
-
+    // Keep only the last 30 seconds of temperature data
+    temperatureData = temperatureData.slice(-120);
     // Add the current time to the time labels array
     timeLabels.push(currentTime);
+    // Keep only the last 30 seconds of time labels
+    timeLabels = timeLabels.slice(-120);
 
     // Update the chart with the new data and labels
     temperatureChart.data.datasets[0].data = temperatureData;
@@ -201,7 +204,14 @@ let temperatureChart = new Chart('temperature-chart', {
             unit: 'second',
             displayFormats: {
                 second: 'h:mm:ss a'
-            }
+            },
+            // Use the timeLabels array for the x-axis labels
+        min: timeLabels[0],
+        max: timeLabels[timeLabels.length - 1],
+        bounds: 'data'
+        },
+        grid: {
+          display: false
         }
     },
     
@@ -209,14 +219,19 @@ let temperatureChart = new Chart('temperature-chart', {
         {
           title:{
           display:true,
-          text:'Temperature(℃)'
+          text:'Current Temperature(℃)'
         },
         ticks: {
           beginAtZero: true
         }
+        // Use the temperatureData array for the y-axis data
+     
+        
       }
     
     }
+
+   
   }
 });
 
