@@ -173,10 +173,41 @@ body {
     padding-bottom: 1vw;
   }
 }  */
+.title1{
+  font-size: 1.8vw;
+}
+.title2{
+  font-size:1.5vw;
+}
+.title3{
+  font-size: 1.5vw;
+}
 
 @media (orientation: portrait) {
   .container {
     flex-direction: column; /* Change flex direction to column when in portrait mode */
   }
+  .card {
+    width: 40vw;
+  }
+  .bottom {
+    background-color: #fff;
+    padding: 6vh 0 8vh 0; 
+  }
+  #chart-container {
+    width: 90%;
+    height: 70%;
+    margin-left:3vw;
+    margin-top:9vh;
+    margin-right:0.5vw;
+  }
+  .title1{
+    font-size: 3.5vw;
+  }
+  .title2{
+    font-size: 3vw;
+  }
 }
+
+
 
