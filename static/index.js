@@ -144,17 +144,19 @@ function formatInputValue(inputElement) {
 function startChart() {
   chartIntervalId = setInterval(() => {
     // Fetch the current temperature value and add it to the data array
+    
     let currentTemp = parseFloat(document.getElementById('second-unit').value);
     let currentTime = new Date();
     temperatureData.push(currentTemp);
 
     // Add the current time to the time labels array
-    timeLabels.push(currentTime.toLocaleTimeString());
+    timeLabels.push(currentTime);
 
     // Update the chart with the new data and labels
     temperatureChart.data.datasets[0].data = temperatureData;
     temperatureChart.data.labels = timeLabels;
     temperatureChart.update();
+    
   }, 1000);
 }
 
@@ -172,33 +174,52 @@ let temperatureChart = new Chart('temperature-chart', {
   type: 'line',
   data: {
     labels:timeLabels,
-    datasets: [{
-      label: 'Current Temperature Diagram (°C)',
+    datasets: [
+      {
+      label: 'Current Temperature Diagram',
       data: temperatureData,
       backgroundColor: 'rgba(255, 99, 132, 0.2)',
       borderColor: 'rgba(255, 99, 132, 1)',
-      borderWidth: 1,
+      borderWidth: 2,
+      tension:0.3,
       fill: false
-    }]
+    }
+  ]
   },
   options: {
     scales: {
-      xAxes: [{
+      x: {
         type: 'time',
+        display: true,
+        title: {
+            display: true,
+            text: 'Time',
+           
+           
+        },
         time: {
-          displayFormats: {
-            minute: 'h:mm a'
-          }
+            unit: 'second',
+            displayFormats: {
+                second: 'h:mm:ss a'
+            }
         }
-      }],
-      yAxes: [{
+    },
+    
+      y: 
+        {
+          title:{
+          display:true,
+          text:'Temperature(℃)'
+        },
         ticks: {
           beginAtZero: true
         }
-      }]
+      }
+    
     }
   }
 });
+
 
 
 
