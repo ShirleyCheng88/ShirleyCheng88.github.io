@@ -235,7 +235,7 @@ body {
   padding: 16px;
   display: none;
 
-  background: rgba(248, 248, 248, 0.8); /* Change the background color to a semi-transparent one */
+  background: linear-gradient(135deg, rgba(248, 248, 248, 0.9), rgba(210, 210, 210, 0.9));
   color: #444;
   font-family: 'Roboto', sans-serif;
 }
