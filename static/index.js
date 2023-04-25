@@ -102,8 +102,7 @@ function formatInputValue(inputElement) {
       // Define variables for the loop
       let test=setTemp - currentTyped;
       
-      let increment = (setTemp - currentTyped) /30.00; // Change in temperature for each step
-      console.log('Increment:', increment); 
+      
       let delay = 300; // Delay between steps (in ms)
       let counter = 0; // Counter for the loop
       
