@@ -108,34 +108,36 @@ function formatInputValue(inputElement) {
       
       // Define a function to change the temperature and update the display
       function updateTemperature() {
-      // Calculate the remaining steps
-      const remainingSteps = 100 - counter;
-      // Calculate the remaining temperature difference
-      const remainingDiff = setTemp - currentTyped;
-       // Generate a random number between -1 and 1, then multiply it by a scale factor
-      const scaleFactor = 2 * Math.abs(remainingDiff) / remainingSteps;
-      const randomIncrement = (Math.random() * 2 - 1) * scaleFactor;
+        // Calculate the remaining steps
+  const remainingSteps = 100 - counter;
+  // Calculate the remaining temperature difference
+  const remainingDiff = setTemp - currentTyped;
+  // Define the increment pattern based on the sign of the remaining difference
+  const incrementPattern = (remainingDiff > 0)
+  ? (counter % 5 === 0 ? [4, -3.5] : [5, -3.8])
+  : (counter % 7 === 0 ? [-5.6, 4.3] : [-4, 3]);
 
-      // Calculate the new temperature by adding the random increment
-      const newTemp = currentTyped + randomIncrement;
 
-      // Check if the loop has run 30 times
-      if (counter >= 99) {
-       // Set the temperature to the exact setTemp value
-        document.getElementById('second-unit').value = setTemp.toFixed(2);
-      } else {
-        // Update the current temperature with the new value and continue the loop
-        currentTyped = newTemp;
-        document.getElementById('second-unit').value = currentTyped.toFixed(2);
-        counter++;
-        setTimeout(updateTemperature, delay);
-      }
-      }
+  // Calculate the new temperature by adding the increment from the pattern
+  const newTemp = currentTyped + incrementPattern[counter % 2];
+
+  // Check if the current temperature is very close to the set temperature (within a tolerance of 0.1)
+  if (Math.abs(newTemp - setTemp) <= 2) {
+    // Set the temperature to the exact setTemp value
+    document.getElementById('second-unit').value = setTemp.toFixed(2);
+  } else {
+    // Update the current temperature with the new value and continue the loop
+    currentTyped = newTemp;
+    document.getElementById('second-unit').value = currentTyped.toFixed(2);
+    counter++;
+    setTimeout(updateTemperature, delay);
+  }
+}
       
       // Start the loop to change the temperature
       setTimeout(updateTemperature, delay);
     }
-  }, 3200); // Wait 2.2 seconds before checking for changes
+  }, 4000); // Wait 4 seconds before checking for changes
 }
 
 
@@ -288,3 +290,4 @@ document.addEventListener('click', (event) => {
     panel.classList.remove('show');
   }
 });
+
