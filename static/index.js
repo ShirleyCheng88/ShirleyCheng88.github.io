@@ -103,7 +103,7 @@ function formatInputValue(inputElement) {
       let test=setTemp - currentTyped;
       
       
-      let delay = 300; // Delay between steps (in ms)
+      let delay = 1000; // Delay between steps (in ms)
       let counter = 0; // Counter for the loop
       
       // Define a function to change the temperature and update the display
@@ -113,16 +113,19 @@ function formatInputValue(inputElement) {
   // Calculate the remaining temperature difference
   const remainingDiff = setTemp - currentTyped;
   // Define the increment pattern based on the sign of the remaining difference
-  const incrementPattern = (remainingDiff > 0)
-  ? (counter % 5 === 0 ? [4, -3.5] : [5, -3.8])
-  : (counter % 7 === 0 ? [-5.6, 4.3] : [-4, 3]);
+  const rana=0.8+Math.random() * (1.2 - 0.8);
+  const ranb=-0.7+Math.random() * (0 - (-0.7));
+  const ranc=-1.5+Math.random() * ((-1) - (-1.5));
+  const rand=0+Math.random() * (0.8 - 0);
+  const incrementPattern = remainingDiff > 0 ? [rana, ranb] : [ranc, rand];
+
 
 
   // Calculate the new temperature by adding the increment from the pattern
   const newTemp = currentTyped + incrementPattern[counter % 2];
 
   // Check if the current temperature is very close to the set temperature (within a tolerance of 0.1)
-  if (Math.abs(newTemp - setTemp) <= 2) {
+  if (Math.abs(newTemp - setTemp) <= 1.5) {
     // Set the temperature to the exact setTemp value
     document.getElementById('second-unit').value = setTemp.toFixed(2);
   } else {
